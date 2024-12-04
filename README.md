@@ -1,0 +1,2 @@
+# elimintatorneovim
+neovim configuration
