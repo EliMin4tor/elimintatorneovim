@@ -1,3 +1,2 @@
--- Setup lazy.nvim
-require('config/lazy')
-print("Lazy setup complete")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
