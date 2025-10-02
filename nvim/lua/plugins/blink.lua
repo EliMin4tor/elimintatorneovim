@@ -1,28 +1,17 @@
 return {
-    "saghen/blink.nvim",
-	  dependencies = {
-        "rafamadriz/friendly-snippets",
-	  },
-    -- build = "cargo build --release", -- for delimiters
-    keys = {
-      -- chartoggle
-      {
-        "<C-;>",
-        function() require("blink.chartoggle").toggle_char_eol(";") end,
-        mode = { "n", "v" },
-        desc = "Toggle ; at eol",
-      },
-      {
-        ",",
-        function() require("blink.chartoggle").toggle_char_eol(",") end,
-        mode = { "n", "v" },
-        desc = "Toggle , at eol",
-      },
-    },
-    -- all modules handle lazy loading internally
-    lazy = false,
-    opts = {
-      chartoggle = { enabled = true },
-      tree = { enabled = false },
-    },
+    {
+        'saghen/blink.cmp',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        version = '1.*',
+        opts = {
+            keymap = { preset = 'default' },
+            appearance = { nerd_font_variant = 'mono' },
+            completion = { documentation = { auto_show = false } },
+            fuzzy = { implementation = "lua" },
+            signature = { enabled = true },
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
+            },
+        },
+    }
 }
